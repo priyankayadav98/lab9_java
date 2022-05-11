@@ -4,7 +4,7 @@ import java.util.*;
 import java.lang.*;
 import java.util.List;
 import java.util.Scanner;
-
+// user defined exception
 class QuantityLessException extends Exception{
     QuantityLessException(String msg1){
         System.out.println(msg1);
@@ -21,6 +21,7 @@ class  InvalidPassException extends Exception
 class Practice{
     public static void main(String args[])
 {
+// checked exception implementation
             FileInputStream file = null;
         try {
                 file = new FileInputStream(
@@ -84,7 +85,7 @@ class Practice{
         drug drug1 = new drug(12, "Paracetamol", "Antibody drug.", 10);
         // drug1.generate_bill();
         drug1.calculate_cost(0);
-        System.out.println("no such drug-id");
+        System.out.println("Please input a valid drug-id");
         try{
             drug drug2 = new drug(1, "Paracetamol", "Antibody drug.", 10);
             int c = 0;
@@ -186,7 +187,7 @@ class login
           throw new InvalidPassException("Type a longer password");
       }
       else{
-          System.out.println("you can go ahead.");
+          System.out.println("You can go Ahead.");
       }
     }
     public void setType(String type){
@@ -305,20 +306,15 @@ class drug extends Branches
         System.out.println("Quantity purchased: "+this.quantity);
         System.out.println("Amount paid: "+ amount);
     }
+    /// user defined exception
     public void add_drug(int d_id) throws QuantityLessException {
-        // super.add_drug();
-        // System.out.println("enter drug id:");
-        // Scanner sc = new Scanner(System.in);
-        // int d_id = sc.nextInt();
         if(  this.quantity < 5){
           throw new QuantityLessException("Quantity needs to be added");
-        
         }
         else {
             System.out.println("Drug is in stock");
-        }
+         }
     }
-
 }
 
 class customer extends Order{
@@ -337,9 +333,9 @@ class customer extends Order{
         this.presc_id = presc_id;
     }
 
-    //function overloading
+    
         public void search_drug(String c){
-        //String Class
+      
         String d = new String("Dolo"); 
 
         if(c == d){
@@ -560,3 +556,5 @@ interface stock{
 interface report{
     public void most_sold();
 }
+
+
