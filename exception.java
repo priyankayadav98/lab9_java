@@ -44,15 +44,16 @@ class Practice{
         
    
 //checked exceptions
-            // int c[] = {1,2,3,4};
-            // try{
-            //     int v = c[5];
-            //     System.out.println(v);
-            // }
-            // catch (ArrayIndexOutOfBoundsException e) {
-            //     System.out.println("ArrayIndexOutOfBoundException appears here. Better handle it in code above :)" + e);
-            // }
-//user defined exception1
+
+            int c[] = {1,2,3,4};
+            try{
+                int v = c[5];
+                System.out.println(v);
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("ArrayIndexOutOfBoundException appears here. Better handle it in code above :)" + e);
+            }
+user defined exception1
             try{
               login user1 = new login();
               user1.setPassword("musu");
